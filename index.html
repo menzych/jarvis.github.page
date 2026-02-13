@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="5;url=/new/index.html">
+    <title>Redirect</title>
+    <style>
+        :root {
+            --hologram-blue: #00d2ff;
+            --hologram-glow: rgba(0, 210, 255, 0.5);
+            --bg-dark: #000810;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-dark);
+            color: var(--hologram-blue);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .scanline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 50%, rgba(0, 210, 255, 0.05) 50%);
+            background-size: 100% 4px;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .hud-container {
+            position: relative;
+            text-align: center;
+            padding: 40px;
+            border: 1px solid var(--hologram-blue);
+            background: rgba(0, 210, 255, 0.02);
+            box-shadow: 0 0 20px var(--hologram-glow), inset 0 0 20px var(--hologram-glow);
+            max-width: 500px;
+            width: 90%;
+            backdrop-filter: blur(5px);
+        }
+
+        .hud-container::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--hologram-blue), transparent, var(--hologram-blue));
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        .arc-reactor {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 30px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .circle {
+            position: absolute;
+            border: 2px solid var(--hologram-blue);
+            border-radius: 50%;
+            border-top-color: transparent;
+            border-bottom-color: transparent;
+        }
+
+        .c1 { width: 100%; height: 100%; animation: spin 2s linear infinite; }
+        .c2 { width: 80%; height: 80%; animation: spin-reverse 1.5s linear infinite; border-left-color: transparent; }
+        .c3 { width: 60%; height: 60%; animation: spin 1s linear infinite; border-right-color: transparent; }
+
+        .core {
+            width: 20px;
+            height: 20px;
+            background: var(--hologram-blue);
+            border-radius: 50%;
+            box-shadow: 0 0 15px var(--hologram-blue);
+            animation: pulse 1s ease-in-out infinite;
+        }
+
+        h1 {
+            font-size: 1.2rem;
+            margin: 0 0 10px;
+            text-shadow: 0 0 10px var(--hologram-blue);
+        }
+
+        .status {
+            font-size: 0.8rem;
+            margin-bottom: 25px;
+            opacity: 0.8;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: rgba(0, 210, 255, 0.1);
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: var(--hologram-blue);
+            box-shadow: 0 0 10px var(--hologram-blue);
+            width: 0%;
+            animation: fill 5s linear forwards;
+        }
+
+        .hint {
+            font-size: 0.65rem;
+            color: #ff3e3e;
+            margin-top: 20px;
+            border-top: 1px solid rgba(255, 62, 62, 0.3);
+            padding-top: 15px;
+            text-shadow: 0 0 5px rgba(255, 62, 62, 0.5);
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: 1px solid var(--hologram-blue);
+            color: var(--hologram-blue);
+            text-decoration: none;
+            font-size: 0.7rem;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--hologram-blue);
+            color: var(--bg-dark);
+            box-shadow: 0 0 15px var(--hologram-blue);
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+        @keyframes spin-reverse { to { transform: rotate(-360deg); } }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.7; }
+        }
+        @keyframes fill { to { width: 100%; } }
+
+        .glitch {
+            animation: flicker 3s infinite;
+        }
+
+        @keyframes flicker {
+            0% { opacity: 1; }
+            3% { opacity: 0.4; }
+            6% { opacity: 1; }
+            7% { opacity: 0.4; }
+            8% { opacity: 1; }
+            9% { opacity: 0.4; }
+            10% { opacity: 1; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="scanline"></div>
+    
+    <div class="hud-container">
+        <div class="arc-reactor">
+            <div class="circle c1"></div>
+            <div class="circle c2"></div>
+            <div class="circle c3"></div>
+            <div class="core"></div>
+        </div>
+
+        <h1 class="glitch">Accessing Protocol: NEW</h1>
+        <div class="status">Initializing Interface Transfer...</div>
+        
+        <div class="progress-bar">
+            <div class="progress-fill"></div>
+        </div>
+
+        <a href="/new/index.html" class="btn">Override & Enter</a>
+
+        <div class="hint">
+            System Message: Попробуйте поменять "new" на "old" в адресной строке
+        </div>
+    </div>
+
+    <script>
+        setTimeout(() => {
+            window.location.href = '/new/index.html';
+        }, 5000);
+    </script>
+</body>
+</html>

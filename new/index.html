@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J.A.R.V.I.S. | Ваш умный помощник</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <header class="border-b border-gray-800 bg-gray-900/50 backdrop-blur-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded bg-cyan-600 flex items-center justify-center text-white font-bold text-lg shadow-[0_0_10px_#0891b2]">J</div>
+                <h1 class="text-xl font-bold tracking-wider">JARVIS <span class="text-xs text-gray-500 font-normal">v0.5</span></h1>
+            </div>
+            <nav class="hidden md:flex gap-8 text-sm text-gray-400">
+                <a href="#about" class="hover:text-cyan-400 transition-colors">О СИСТЕМЕ</a>
+                <a href="#features" class="hover:text-cyan-400 transition-colors">ВОЗМОЖНОСТИ</a>
+                <a href="#reqs" class="hover:text-cyan-400 transition-colors">ТРЕБОВАНИЯ</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow container mx-auto px-6 py-16 space-y-24">
+        
+        <section id="about" class="flex flex-col md:flex-row items-center justify-between gap-16">
+            <div class="md:w-1/2 space-y-8">
+                <div class="inline-block px-4 py-1.5 bg-cyan-900/20 text-cyan-400 text-xs font-bold rounded-full border border-cyan-800/50 tracking-wider">
+                    PERSONAL ASSISTANT
+                </div>
+                <h2 class="text-5xl md:text-6xl font-bold leading-tight">
+                    Ваш умный <br>
+                    <span class="accent-text">цифровой помощник</span>
+                </h2>
+                <p class="text-gray-400 text-lg leading-relaxed">
+                    Джарвис — это голосовой ассистент, который работает локально на вашем компьютере. Он понимает команды с полуслова, управляет системой и отвечает приятным голосом.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                    <a href="https://github.com/menzych/Jarvis" target="_blank" class="inline-block bg-cyan-600 hover:bg-cyan-500 text-white px-8 py-4 rounded font-bold transition-all shadow-[0_0_20px_rgba(8,145,178,0.4)] hover:shadow-[0_0_30px_rgba(8,145,178,0.6)] text-center">
+                        ЗАГРУЗИТЬ ОС "J.A.R.V.I.S"
+                    </a>
+                    <div class="flex items-center gap-4 px-6 py-3 text-gray-400 border border-gray-800 rounded">
+                        <div class="relative w-3 h-3">
+                            <div class="w-3 h-3 bg-green-500 rounded-full relative z-10"></div>
+                            <div class="absolute inset-0 pulse-ring"></div>
+                        </div>
+                        <span class="text-sm">Система ожидает...</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="md:w-1/2 flex justify-center relative">
+                <div class="absolute inset-0 bg-cyan-500/10 blur-[100px] rounded-full"></div>
+                <div class="relative w-64 h-64 md:w-96 md:h-96 border border-cyan-500/30 rounded-full flex items-center justify-center animate-[spin_10s_linear_infinite]">
+                    <div class="w-[90%] h-[90%] border border-cyan-400/20 rounded-full border-dashed"></div>
+                </div>
+                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-black/80 rounded-full border border-cyan-500 flex items-center justify-center shadow-[0_0_30px_rgba(6,182,212,0.2)]">
+                    <div class="w-24 h-24 bg-cyan-900/50 rounded-full flex items-center justify-center">
+                        <svg class="w-12 h-12 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path></svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features">
+            <div class="text-center mb-16">
+                <h3 class="text-3xl font-bold mb-4">Почему Джарвис?</h3>
+                <p class="text-gray-500 max-w-2xl mx-auto">Система разработана для максимальной скорости и приватности, работая без подключения к облачным серверам.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="tech-border p-8 rounded-xl bg-gray-900/40">
+                    <div class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-6 text-cyan-400">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3 text-white">Офлайн работа</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Никакие данные не отправляются в интернет. Всё распознавание голоса происходит прямо на вашем устройстве.
+                    </p>
+                </div>
+
+                <div class="tech-border p-8 rounded-xl bg-gray-900/40">
+                    <div class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-6 text-purple-400">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3 text-white">Умный синтез</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Использование нейросетей для создания естественного, живого голоса, который приятно слушать.
+                    </p>
+                </div>
+
+                <div class="tech-border p-8 rounded-xl bg-gray-900/40">
+                    <div class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-6 text-green-400">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3 text-white">Мгновенная реакция</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Оптимизированный код на Python обеспечивает молниеносное выполнение команд без задержек.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="reqs" class="max-w-4xl mx-auto w-full">
+            
+            <div class="border border-yellow-700/50 bg-yellow-900/10 rounded-lg p-8 mb-16 text-center backdrop-blur-sm relative overflow-hidden group">
+                <div class="absolute inset-0 bg-yellow-500/5 group-hover:bg-yellow-500/10 transition-colors duration-500"></div>
+                <div class="relative z-10">
+                    <div class="text-yellow-500 font-bold text-xl mb-3 uppercase tracking-widest flex items-center justify-center gap-2">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                        Важное уведомление
+                    </div>
+                    <p class="text-gray-200 text-lg font-medium">
+                        КОМАНДЫ НУЖНО СОЗДАВАТЬ САМОМУ
+                    </p>
+                    <p class="text-yellow-500/70 text-sm mt-2 font-mono">
+                        можно через ChatGpt разрешаю :)
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <h3 class="text-2xl font-bold mb-8 text-white">Список зависимостей (pip install)</h3>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <span class="px-5 py-3 bg-gray-900 rounded border border-gray-700 text-cyan-400 font-mono hover:border-cyan-500 hover:shadow-[0_0_15px_rgba(6,182,212,0.3)] transition-all cursor-help">SpeechRecognition</span>
+                    <span class="px-5 py-3 bg-gray-900 rounded border border-gray-700 text-cyan-400 font-mono hover:border-cyan-500 hover:shadow-[0_0_15px_rgba(6,182,212,0.3)] transition-all cursor-help">pygame</span>
+                    <span class="px-5 py-3 bg-gray-900 rounded border border-gray-700 text-cyan-400 font-mono hover:border-cyan-500 hover:shadow-[0_0_15px_rgba(6,182,212,0.3)] transition-all cursor-help">torch</span>
+                    <span class="px-5 py-3 bg-gray-900 rounded border border-gray-700 text-cyan-400 font-mono hover:border-cyan-500 hover:shadow-[0_0_15px_rgba(6,182,212,0.3)] transition-all cursor-help">sounddevice</span>
+                    <span class="px-5 py-3 bg-gray-900 rounded border border-gray-700 text-cyan-400 font-mono hover:border-cyan-500 hover:shadow-[0_0_15px_rgba(6,182,212,0.3)] transition-all cursor-help">pyaudio</span>
+                    <span class="px-5 py-3 bg-gray-900 rounded border border-gray-700 text-cyan-400 font-mono hover:border-cyan-500 hover:shadow-[0_0_15px_rgba(6,182,212,0.3)] transition-all cursor-help">vosk</span>
+                    <span class="px-5 py-3 bg-gray-900 rounded border border-gray-700 text-cyan-400 font-mono hover:border-cyan-500 hover:shadow-[0_0_15px_rgba(6,182,212,0.3)] transition-all cursor-help">fuzzywuzzy</span>
+                    <span class="px-5 py-3 bg-gray-900 rounded border border-gray-700 text-cyan-400 font-mono hover:border-cyan-500 hover:shadow-[0_0_15px_rgba(6,182,212,0.3)] transition-all cursor-help">python-Levenshtein</span>
+                    <span class="px-5 py-3 bg-gray-900 rounded border border-gray-700 text-cyan-400 font-mono hover:border-cyan-500 hover:shadow-[0_0_15px_rgba(6,182,212,0.3)] transition-all cursor-help">omegaconf</span>
+                    <span class="px-5 py-3 bg-gray-900 rounded border border-gray-700 text-cyan-400 font-mono hover:border-cyan-500 hover:shadow-[0_0_15px_rgba(6,182,212,0.3)] transition-all cursor-help">numpy</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="border-t border-gray-800 bg-gray-900/80 py-8 mt-12">
+        <div class="container mx-auto px-6 text-center text-gray-500 text-sm">
+            <p class="mb-2">&copy 2026 menzych | Все права защищены</p>
+            <p>Создано для удобства и эффективности.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
